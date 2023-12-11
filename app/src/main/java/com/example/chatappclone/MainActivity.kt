@@ -61,7 +61,7 @@ class MainActivity : ComponentActivity() {
 fun ChatAppNavigation()
 {
     val navController = rememberNavController()
-    NavHost(navController = navController, startDestination = DestinationScreen.SignUp.route)
+    NavHost(navController = navController, startDestination = DestinationScreen.Profile.route)
     {
         composable(DestinationScreen.SignUp.route)
         {
@@ -73,11 +73,11 @@ fun ChatAppNavigation()
         }
         composable(DestinationScreen.Profile.route)
         {
-            ProfileScreen()
+            ProfileScreen(navController = navController)
         }
         composable(DestinationScreen.StatusList.route)
         {
-            StatusListScreen()
+            StatusListScreen(navController = navController)
         }
         composable(DestinationScreen.SingleStatus.route)
         {
@@ -85,7 +85,7 @@ fun ChatAppNavigation()
         }
         composable(DestinationScreen.ChatList.route)
         {
-            ChatListScreen()
+            ChatListScreen(navController = navController)
         }
         composable(DestinationScreen.SingleChat.route)
         {
