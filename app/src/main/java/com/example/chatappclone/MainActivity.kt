@@ -21,6 +21,7 @@ import com.example.chatappclone.ui.SingleChatScreen
 import com.example.chatappclone.ui.SingleStatusScreen
 import com.example.chatappclone.ui.StatusListScreen
 import com.example.chatappclone.ui.theme.ChatAppCloneTheme
+import dagger.hilt.android.AndroidEntryPoint
 
 sealed class DestinationScreen(val route: String)
 {
@@ -39,7 +40,7 @@ sealed class DestinationScreen(val route: String)
     }
 
 }
-
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
