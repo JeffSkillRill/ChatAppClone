@@ -10,6 +10,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -62,11 +63,12 @@ class MainActivity : ComponentActivity() {
 fun ChatAppNavigation()
 {
     val navController = rememberNavController()
+    val vm = hiltViewModel<CAViewModel>()
     NavHost(navController = navController, startDestination = DestinationScreen.Profile.route)
     {
         composable(DestinationScreen.SignUp.route)
         {
-            SignUpScreen()
+            SignUpScreen(navController, vm)
         }
         composable(DestinationScreen.Login.route)
         {

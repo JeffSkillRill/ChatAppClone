@@ -3,9 +3,9 @@ import org.jetbrains.kotlin.kapt3.base.Kapt.kapt
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-    //id("kotlin-kapt")
+    id("kotlin-kapt")
     id("com.google.gms.google-services")
-    //id("dagger.hilt.android.plugin")
+    id("dagger.hilt.android.plugin")
     //id("com.google.gms.google-services")
 }
 
@@ -40,7 +40,7 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "11"
     }
     buildFeatures {
         compose = true
@@ -64,11 +64,12 @@ dependencies {
     //implementation ("com.google.firebase:firebase-auth-ktx")
     //implementation ("com.google.firebase:firebase-firestore-ktx")
     //implementation ("com.google.firebase:firebase-storage-ktx")
+    implementation ("androidx.hilt:hilt-navigation-fragment:1.0.0")
 
     implementation ("com.google.dagger:hilt-android:2.42")
     implementation ("androidx.hilt:hilt-navigation-compose:1.0.0")
     implementation ("com.google.firebase:firebase-firestore:24.6.0")
-    //kapt ("com.google.dagger:hilt-android-compiler:2.42")
+    kapt ("com.google.dagger:hilt-android-compiler:2.42")
 
     implementation ("io.coil-kt:coil-compose:1.3.2")
 
