@@ -36,11 +36,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "17"
     }
     buildFeatures {
         compose = true
@@ -66,10 +66,10 @@ dependencies {
     //implementation ("com.google.firebase:firebase-storage-ktx")
     implementation ("androidx.hilt:hilt-navigation-fragment:1.0.0")
 
-    implementation ("com.google.dagger:hilt-android:2.42")
+    implementation ("com.google.dagger:hilt-android:2.46")
     implementation ("androidx.hilt:hilt-navigation-compose:1.0.0")
     implementation ("com.google.firebase:firebase-firestore:24.6.0")
-    kapt ("com.google.dagger:hilt-android-compiler:2.42")
+    kapt ("com.google.dagger:hilt-android-compiler:2.46")
 
     implementation ("io.coil-kt:coil-compose:1.3.2")
 

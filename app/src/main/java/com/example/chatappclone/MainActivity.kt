@@ -64,7 +64,7 @@ fun ChatAppNavigation()
 {
     val navController = rememberNavController()
     val vm = hiltViewModel<CAViewModel>()
-    NavHost(navController = navController, startDestination = DestinationScreen.Profile.route)
+    NavHost(navController = navController, startDestination = DestinationScreen.SignUp.route)
     {
         composable(DestinationScreen.SignUp.route)
         {

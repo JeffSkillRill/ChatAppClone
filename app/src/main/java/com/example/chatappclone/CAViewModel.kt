@@ -10,8 +10,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class CAViewModel @Inject constructor(
-    val auth: FirebaseAuth,
-    val db: FirebaseFirestore,
+    //val auth: FirebaseAuth,
+    //val db: FirebaseFirestore,
     val storage: FirebaseStorage
 ): ViewModel() {
     val inProgress = mutableStateOf(false)
