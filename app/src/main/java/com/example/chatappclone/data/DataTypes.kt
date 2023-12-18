@@ -1,6 +1,6 @@
 package com.example.chatappclone.data
 
-data class UseeData(
+data class UserData(
     val userId: String? = "",
     val name: String? = "",
     val number: String? = "",
