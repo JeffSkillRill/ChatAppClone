@@ -28,8 +28,12 @@ class CAViewModel @Inject constructor(
     val userData = mutableStateOf<UserData?>(null)
 
     init {
+        auth.signOut()
         val currentUser = auth.currentUser
         signedIn.value = currentUser != null
+        currentUser?.uid?.let { uid ->
+            getUserData(uid)
+        }
     }
 
     fun onSignUp(name: String, number: String, email: String, password: String) {
@@ -89,6 +93,7 @@ class CAViewModel @Inject constructor(
                     }else{
                         db.collection(COLLECTION_USER).document(uid).set(userData)
                         inProgress.value = false
+                        getUserData(uid)
                     }
 
                 }
@@ -105,7 +110,7 @@ class CAViewModel @Inject constructor(
                 if (error != null)
                     handleException(error, "Cannot retrieve user data")
                 if (value != null){
-                    val user = value.toObject<UserData>()
+                    val user = value.toObject(UserData::class.java)
                     userData.value = user
                     inProgress.value = false
                 }

@@ -23,5 +23,5 @@ class HiltModule {
     fun provideFireStore(): FirebaseFirestore = FirebaseFirestore.getInstance()
 
     @Provides
-    fun provideStorage(): FirebaseStorage = Firebase.storage
+    fun provideStorage(): FirebaseStorage = FirebaseStorage.getInstance()
 }
